@@ -1,0 +1,58 @@
+fastapi==0.121.0
+uvicorn==0.38.0
+google-generativeai==0.8.5
+python-dotenv==1.2.1
+
+
+# ------------------------------------------------------------
+# Prompt Builder
+# ------------------------------------------------------------
+def build_prompt(category: str, resume_text: str, skills: str, projects: str):
+
+    # --- Resume Based ---
+    if category == "resume":
+        return f"""
+You are a senior technical interviewer.
+Generate exactly **15 interview questions strictly based on the resume**.
+
+Return ONLY JSON array:
+[
+  {{"id":1, "question":"...", "topic":"..."}}
+]
+
+Resume:
+{resume_text[:15000]}
+
+Skills: {skills}
+Projects: {projects}
+"""
+
+    # --- Scenario Based ---
+    if category == "scenario":
+        return """
+Generate 15 scenario-based behavioral interview questions.
+Evaluate:
+- conflict handling
+- deadlines
+- teamwork
+- leadership
+- ownership
+Return ONLY JSON array.
+"""
+
+    # --- Communication Based ---
+    if category == "communication":
+        return """
+Generate 15 communication-based interview questions.
+Evaluate:
+- clarity
+- simplifying complex ideas
+- empathy
+- cross-team communication
+Return ONLY JSON array.
+"""
+
+    # --- General ---
+    return """
+Generate 15 general interview questions in JSON only.
+"""
