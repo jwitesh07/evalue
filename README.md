@@ -53,34 +53,45 @@ Ready for academic or professional review
 
 
 🛠️ Tech Stack
-Frontend:
+Frontend:React,Vite,Tailwind CSS
 
-React
+Backend:FastAPI (Python),Node.js (Authentication & API layer)
 
-Vite
+AI & ML:Groq LLM (LLaMA-3.3-70B),OpenCV,MediaPipe
 
-Tailwind CSS
+Speech Processing:whisper,FFmpeg
 
-Backend:
+Database:mongo_db
 
-FastAPI (Python)
+⚙️ Installation & Setup
+1️⃣ Clone the Repository
+git clone https://github.com/your-username/evalue.git
+cd evalue
 
-Node.js (Authentication & API layer)
+2️⃣ Backend Setup (AI Service)
+cd ai_service
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+pip install -r requirements.txt
 
-AI & ML:
 
-Groq LLM (LLaMA-3.3-70B)
+Create .env file:
 
-OpenCV
+GROQ_API_KEY=your_groq_api_key
 
-MediaPipe
 
-Speech Processing:
+Run FastAPI server:
+uvicorn main_groq:app --reload
 
-whisper
+3️⃣ Frontend Setup
+cd ai-interviewi-trainer
+npm install
+npm run dev
 
-FFmpeg
 
-Database:
+📸 Preview:
+<img width="2890" height="1408" alt="image" src="https://github.com/user-attachments/assets/69d67de8-a588-4035-a9e3-d4aba6ad18e5" />
+<img width="1351" height="714" alt="Screenshot 2026-01-28 at 5 05 34 PM" src="https://github.com/user-attachments/assets/198f9e59-1164-42d9-97eb-247b3afcb41e" />
 
-mongo_db
+<img width="1444" height="754" alt="Screenshot 2026-01-28 at 4 52 42 PM" src="https://github.com/user-attachments/assets/f24d87a8-4368-4403-8e47-4924cef4f317" />
+<img width="1307" height="724" alt="Screenshot 2026-01-28 at 5 02 59 PM" src="https://github.com/user-attachments/assets/9901cd4e-e2bb-4429-93f4-4e90587b9f23" />
